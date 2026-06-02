@@ -23,3 +23,42 @@ $ ./bootstrap.sh
 $ ./skynet example/config
 ```
 
+## 02-chatroom
+
+a sproto-based chat room
+
+```
+$ cd skynet-guide/02-chatroom
+$ ./tools/bootstrap.sh
+
+# start server
+$ ./skynet conf/game.conf
+
+# start client
+$ ./lua script/client.lua
+```
+
+chat room
+
+```
+> login <name>
+
+> list                 # show rooms
+* room1
+* room2
+
+> join room1
+> where
+@in [room1]
+
+> say Hello~
+@name: Hello~
+
+> leave                # leave room
+
+> where                # in which room?
+@in [none]
+
+> create <room-name>   # create room
+```
+

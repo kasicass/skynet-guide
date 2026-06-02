@@ -42,7 +42,8 @@ cp -R "$SKYNET_PATH/cservice" .
 # [luaclib]
 #
 
-LUACLIB_FILES="luaclib/skynet.so
+LUACLIB_FILES="luaclib/client.so
+luaclib/skynet.so
 luaclib/sproto.so
 luaclib/lpeg.so"
 
