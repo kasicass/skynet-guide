@@ -77,6 +77,7 @@ service/service_mgr.lua"
 
 copy_files "$SERVICE_FILES"
 
+
 #
 # [examples]
 #
@@ -92,4 +93,6 @@ examples/simpledb.lua
 examples/watchdog.lua
 
 examples/client.lua"
+
+copy_files "$EXAMPLES_FILES"
 
