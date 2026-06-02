@@ -15,50 +15,63 @@ copy_files() {
     done
 }
 
-# sh cleanup.sh
+sh tools/cleanup.sh
+
+
+#
+# copy binary: lua, skynet
+#
 
 SKYNET_PATH="../../skynet"
-
 cp "$SKYNET_PATH/3rd/lua/lua" .
 cp "$SKYNET_PATH/skynet" .
 
-# cp -R "$SKYNET_PATH/cservice" .
+
+#
+# copy others to [engine]
+#
+
+SKYNET_PATH="../../../skynet"
+mkdir engine
+cd engine
+
+cp -R "$SKYNET_PATH/cservice" .
 
 
-# #
-# # [luaclib]
-# #
+#
+# [luaclib]
+#
 
-# LUACLIB_FILES="luaclib/skynet.so
-# luaclib/sproto.so
-# luaclib/lpeg.so"
+LUACLIB_FILES="luaclib/skynet.so
+luaclib/sproto.so
+luaclib/lpeg.so"
 
-# copy_files "$LUACLIB_FILES"
+copy_files "$LUACLIB_FILES"
 
 
-# #
-# # [lualib]
-# #
+#
+# [lualib]
+#
 
-# LUALIB_FILES="lualib/loader.lua
-# lualib/skynet.lua
-# lualib/skynet/require.lua
-# lualib/skynet/debug.lua
-# lualib/skynet/manager.lua
-# lualib/skynet/service.lua
-# lualib/skynet/harbor.lua
-# lualib/skynet/socket.lua
-# lualib/skynet/snax.lua
-# lualib/snax/interface.lua
-# lualib/snax/gateserver.lua
-# lualib/sproto.lua
-# lualib/sprotoloader.lua
-# lualib/sprotoparser.lua
-# lualib/http/httpd.lua
-# lualib/http/internal.lua
-# lualib/http/sockethelper.lua"
+LUALIB_FILES="lualib/loader.lua
+lualib/skynet.lua
+lualib/skynet/require.lua
+lualib/skynet/debug.lua
+lualib/skynet/manager.lua
+lualib/skynet/service.lua
+lualib/skynet/harbor.lua
+lualib/skynet/socket.lua
+lualib/skynet/snax.lua
+lualib/snax/interface.lua
+lualib/snax/gateserver.lua
+lualib/sproto.lua
+lualib/sprotoloader.lua
+lualib/sprotoparser.lua
+lualib/http/httpd.lua
+lualib/http/internal.lua
+lualib/http/sockethelper.lua"
 
-# copy_files "$LUALIB_FILES"
+copy_files "$LUALIB_FILES"
 
 
 # #

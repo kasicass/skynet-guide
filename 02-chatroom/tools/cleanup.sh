@@ -12,5 +12,8 @@
 #     fi
 # done
 
-rm lua
-rm skynet
+rm -f lua
+rm -f skynet
+
+rm -rf engine
+
