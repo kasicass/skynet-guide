@@ -12,6 +12,7 @@ cp -R $SKYNET_PATH/luaclib .
 cp -R $SKYNET_PATH/lualib .
 
 mkdir examples
+cp $SKYNET_PATH/examples/agent.lua examples/
 cp $SKYNET_PATH/examples/client.lua examples/
 cp $SKYNET_PATH/examples/config examples/
 cp $SKYNET_PATH/examples/config.path examples/
@@ -25,6 +26,7 @@ mkdir service
 cp $SKYNET_PATH/service/bootstrap.lua service/
 cp $SKYNET_PATH/service/cmaster.lua service/
 cp $SKYNET_PATH/service/console.lua service/
+cp $SKYNET_PATH/service/cslave.lua service/
 cp $SKYNET_PATH/service/datacenterd.lua service/
 cp $SKYNET_PATH/service/debug_console.lua service/
 cp $SKYNET_PATH/service/gate.lua service/
