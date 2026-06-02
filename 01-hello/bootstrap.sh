@@ -1,19 +1,33 @@
 #!/bin/sh
 
+sh cleanup.sh
+
 SKYNET_PATH="../../skynet"
 
-FILES=`grep -v '^$' < cpfile.list | grep -v "^#"`
+cp $SKYNET_PATH/3rd/lua/lua .
+cp $SKYNET_PATH/skynet .
 
-# make dirs
-while IFS= read -r file; do
-    echo `dirname $file`
-done <<< $FILES | grep -v '\.' | sort | uniq | xargs mkdir -p
+cp -R $SKYNET_PATH/cservice .
+cp -R $SKYNET_PATH/luaclib .
+cp -R $SKYNET_PATH/lualib .
 
-# cp files
-while IFS= read -r file; do
-    cp $SKYNET_PATH/$file $file
-done <<< $FILES
+mkdir examples
+cp $SKYNET_PATH/examples/client.lua examples/
+cp $SKYNET_PATH/examples/config examples/
+cp $SKYNET_PATH/examples/config.path examples/
+cp $SKYNET_PATH/examples/main.lua examples/
+cp $SKYNET_PATH/examples/proto.lua examples/
+cp $SKYNET_PATH/examples/protoloader.lua examples/
+cp $SKYNET_PATH/examples/simpledb.lua examples/
+cp $SKYNET_PATH/examples/watchdog.lua examples/
 
-#grep -v '^$' < cpfile.list | grep -v "^#" | awk -F '/' '{print $1}'
-# cp $SKYNET_PATH/skynet .
+mkdir service
+cp $SKYNET_PATH/service/bootstrap.lua service/
+cp $SKYNET_PATH/service/cmaster.lua service/
+cp $SKYNET_PATH/service/console.lua service/
+cp $SKYNET_PATH/service/datacenterd.lua service/
+cp $SKYNET_PATH/service/debug_console.lua service/
+cp $SKYNET_PATH/service/gate.lua service/
+cp $SKYNET_PATH/service/launcher.lua service/
+cp $SKYNET_PATH/service/service_mgr.lua service/
 
