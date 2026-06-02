@@ -5,24 +5,24 @@
 
 copy_files() {
     local files="$1"
-    while IFS= read -r file; do
+    echo "$files" | while IFS= read -r file; do
         # skip empty line
         [ -z "$file" ] && continue
 
-        DIRNAME=`dirname $file`
-        mkdir -p $DIRNAME
-        cp $SKYNET_PATH/$file $DIRNAME
-    done <<< "$files"
+        DIRNAME="$(dirname "$file")"
+        mkdir -p "$DIRNAME"
+        cp "$SKYNET_PATH/$file" "$DIRNAME"
+    done
 }
 
 sh cleanup.sh
 
 SKYNET_PATH="../../skynet"
 
-cp $SKYNET_PATH/3rd/lua/lua .
-cp $SKYNET_PATH/skynet .
+cp "$SKYNET_PATH/3rd/lua/lua" .
+cp "$SKYNET_PATH/skynet" .
 
-cp -R $SKYNET_PATH/cservice .
+cp -R "$SKYNET_PATH/cservice" .
 
 
 #
@@ -56,9 +56,7 @@ lualib/sprotoloader.lua
 lualib/sprotoparser.lua
 lualib/http/httpd.lua
 lualib/http/internal.lua
-lualib/http/sockethelper.lua
-lualib/sproto.lua
-lualib/sprotoparser.lua"
+lualib/http/sockethelper.lua"
 
 copy_files "$LUALIB_FILES"
 
