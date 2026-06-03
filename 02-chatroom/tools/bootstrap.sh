@@ -75,21 +75,21 @@ lualib/http/sockethelper.lua"
 copy_files "$LUALIB_FILES"
 
 
-# #
-# # [service]
-# #
+#
+# [service]
+#
 
-# SERVICE_FILES="service/bootstrap.lua
-# service/cmaster.lua
-# service/console.lua
-# service/cslave.lua
-# service/datacenterd.lua
-# service/debug_console.lua
-# service/gate.lua
-# service/launcher.lua
-# service/service_mgr.lua"
+SERVICE_FILES="service/bootstrap.lua
+service/cmaster.lua
+service/console.lua
+service/cslave.lua
+service/datacenterd.lua
+service/debug_console.lua
+service/gate.lua
+service/launcher.lua
+service/service_mgr.lua"
 
-# copy_files "$SERVICE_FILES"
+copy_files "$SERVICE_FILES"
 
 
 # #
