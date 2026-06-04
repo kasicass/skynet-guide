@@ -23,7 +23,6 @@ sh tools/cleanup.sh
 #
 
 SKYNET_PATH="../../skynet"
-cp "$SKYNET_PATH/3rd/lua/lua" .
 cp "$SKYNET_PATH/skynet" .
 
 
